@@ -99,7 +99,7 @@
 
     </head>
     <body>
-        <link rel="icon" href="Cohep.jpg" type="image/x-icon">
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSH9QGuqaAVeq8oh7QkqXiAf0NRb9fM6K41A&s" type="image/x-icon">
 
         <div class="navbar">            
             <a href="https://calendar.google.com/calendar/u/0/r?pli=1">Calendario</a>
@@ -109,7 +109,7 @@
         
         <div class="container">
             <div style="text-align: center; margin-top: 20px;">
-                <img src="https://www.elinformativo.hn/wp-content/uploads/2018/02/Cohep.jpg" alt="COHEP" width="300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSH9QGuqaAVeq8oh7QkqXiAf0NRb9fM6K41A&s" alt="COHEP" width="300">
 
             </div>
 
