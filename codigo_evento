@@ -134,7 +134,149 @@
                 <input type="time" id="hora" name="hora_inicio" required>         
                         
                 <label for="participantes">Cantidad de participantes:</label>
-                <input type="number" id="participantes" name="participantes" required>
+                <input type="number" id="participantes" name="participantes" required> 
+
+                <label for="tecnologia">Tecnologia::</label>
+                <select id="tecnologia" name="tecnologia">
+                    <option value="" disabled selected>Audio Visuales Requerido</option>
+                    <option value="Salon Albert Smith"> Zoom</option>
+                    <option value="Salon Albert Smith"> Lapto</option>                   
+                </select>              
+                        
+                <label for="montaje">Montaje del Evento:</label>
+                <select id="montaje" name="montaje">
+                    <option value="" disabled selected>Seleccione un montaje</option>
+                    <option value="Auditorio 1">Auditorio 1</option>
+                    <option value="Auditorio 2">Auditorio 2</option>
+                    <option value="Estilo U">Estilo U</option>
+                    <option value="Mesa Redonda">Mesa Redonda</option>
+                    <option value="Coctel">Coctel</option>
+                    <option value="Imperial">Imperial</option>
+                    <option value="Media Luna">Media Luna</option>
+                    <option value="Escuela">Escuela</option>                                   
+                </select>                  
+                         
+                <button type="submit" >Guardar Información</button> 
+
+                <p id="mensaje"></p>
+                <script>
+                    //Datos de ejemplo (simulación de reservas)
+                    const reservas = [
+                        { fecha: "2025-03-11", horaInicio: "10:00", horaFinal: "12:00", salon: "salon_convenciones", subdivision: "subsalon1" }, // A
+                        { fecha: "2025-03-11", horaInicio: "14:00", horaFinal: "16:00", salon: "salon_convenciones", subdivision: "subsalon2" }, // B
+                        { fecha: "2025-03-11", horaInicio: "10:00", horaFinal: "12:00", salon: "salon_convenciones", subdivision: "subsalon3" }  // C
+                    ];
+                
+                    //Función para convertir la hora a minutos
+                    function convertirAHorasMinutos(hora) {
+                        const [horaParte, minutoParte] = hora.split(":").map(num => parseInt(num, 10));
+                        return horaParte * 60 + minutoParte;
+                    }
+                
+                    //Función para verificar si hay reservas en el mismo horario
+                    function verificarReserva(fecha, horaInicio, horaFinal, salon, subSalon) {
+                        const inicioMinutos = convertirAHorasMinutos(horaInicio);
+                        const finalMinutos = convertirAHorasMinutos(horaFinal);
+                
+                        return reservas.some(reserva => {
+                            const reservaInicio = convertirAHorasMinutos(reserva.horaInicio);
+                            const reservaFinal = convertirAHorasMinutos(reserva.horaFinal);
+                
+                            const hayConflictoHorario = (inicioMinutos < reservaFinal && finalMinutos > reservaInicio);
+                            const mismoSalon = reserva.salon === salon;
+                            const mismaFecha = reserva.fecha === fecha;
+                
+                            // Verificar si hay conflicto con la subdivisión (si aplica)
+                            const conflictoSubdivision = (subSalon === "" || reserva.subdivision === "" || subSalon === reserva.subdivision);
+                
+                            return mismaFecha && mismoSalon && hayConflictoHorario && conflictoSubdivision;
+                        });
+                    }
+                
+                    // Evento al enviar el formulario
+                    document.getElementById("reservaForm").addEventListener("submit", function (event) {
+                        event.preventDefault(); // Evitar que se envíe el formulario automáticamente
+                
+                        const fecha = document.getElementById("fecha").value;
+                        const horaInicio = document.getElementById("hora").value;
+                        const horaFinal = document.getElementById("horaf").value;
+                        const salon = document.getElementById("salon_disponible").value;
+                        const subSalon = document.getElementById("subsalon").value || "";  // Obtener la subdivisión si es aplicable
+                        const mensaje = document.getElementById("mensaje");
+                
+                        // Verificar si el horario ya está reservado
+                        if (verificarReserva(fecha, horaInicio, horaFinal, salon, subSalon)) {
+                            mensaje.textContent = `❌ El salón "${salon}" (subdivisión ${subSalon || "general"}) ya está reservado en ese horario.`;
+                            mensaje.style.color = "red";
+                            return;
+                        }
+                
+                        // Verificar si alguna sección del salón "salon_convenciones" está ocupada
+                        if (salon === "salon_convenciones") {
+                            const seccionOcupada = reservas.some(reserva => {
+                                
+                                if (reserva.fecha === fecha && reserva.salon === salon) {
+                                    if (subSalon === "Seccion_A" && reserva.subdivision === "Seccion_A") {
+                                        return true;
+                                    }
+                                    if (subSalon === "Seccion_B" && reserva.subdivision === "Seccion_B") {
+                                        return true;
+                                    }
+                                    if (subSalon === "Seccion_C" && reserva.subdivision === "Seccion_C") {
+                                        return true;
+                                    }
+                                }
+                                return false;
+                            });
+                
+                            if (seccionOcupada) {
+                                mensaje.textContent = `❌ La sección "${subSalon}" ya está reservada en esa fecha.`;
+                                mensaje.style.color = "red";
+                                return;
+                            }
+                
+                            // Verificar la lógica de restricciones entre las secciones A, B y C
+                            if (subSalon === "Seccion_A") {
+                                
+                                if (reservas.some(r => r.fecha === fecha && r.salon === salon && r.subdivision === "Seccion_C")) {
+                                    mensaje.textContent = `❌ La sección C está ocupada.`;
+                                    mensaje.style.color = "red";
+                                    return;
+                                }
+                            }
+                
+                            if (subSalon === "Seccion_B") {
+                                
+                                if (reservas.some(r => r.fecha === fecha && r.salon === salon && r.subdivision === "Seccion_C")) {
+                                    mensaje.textContent = `❌ La sección C está ocupada.`;
+                                    mensaje.style.color = "red";
+                                    return;
+                                }
+                            }
+                
+                            if (subSalon === "Seccion_C") {
+
+                                    if (reservas.some(r => r.fecha === fecha && r.salon === salon && r.subdivision === "Seccion_A")) {
+                                    mensaje.textContent = `❌ La sección A ya está ocupada.`;
+                                    mensaje.style.color = "red";
+                                    return;
+                                }
+                                if (reservas.some(r => r.fecha === fecha && r.salon === salon && r.subdivision === "Seccion_B")) {
+                                    mensaje.textContent = `❌ La sección B ya está ocupada.`;
+                                    mensaje.style.color = "red";
+                                    return;
+                                }
+                            }
+                        }
+                
+                        // Se agrega a google sheets
+                        reservas.push({ fecha, horaInicio, horaFinal, salon, subdivision: subSalon });
+                
+                        mensaje.textContent = `✅ ¡Reserva exitosa para "${salon}" (subdivisión ${subSalon || "general"})!`;
+                        mensaje.style.color = "green";
+                    
+                    });
+                </script>
 
                 <button type="submit" >Guardar Información</button>                                
             </form>           
