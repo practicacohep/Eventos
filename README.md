@@ -237,10 +237,9 @@
                             // Abre la primera ventana
                             window.open("https://docs.google.com/spreadsheets/d/1NCRdb6hLrHTW1G9-aTVeuWfQ4d42XnpHjAWRVqRUOwo/edit?gid=0#gid=0", "_blank");
                             
-                            // Usa setTimeout para abrir la segunda ventana después de un pequeño retraso
-                            setTimeout(function() {
-                                window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0",  "_blank");
-                            }, 500); // 500 milisegundos de retraso
+                           setTimeout(function() {
+                            window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0", "_blank");
+                            }, 400); // 500 milisegundos de retraso
                         } else {
                             alert("Clave incorrecta. Acceso denegado.");
                         }
