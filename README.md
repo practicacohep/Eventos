@@ -44,7 +44,7 @@
                 padding: 15px;
                 border-radius: 5px;
                 box-shadow: 0 4px 15px rgba(17, 255, 9, 0.3);
-                width: 85%;
+                width: 95%;
                 max-width: 800px;            
                 margin-top: 70px;
                 color: rgb(0, 0, 0);
