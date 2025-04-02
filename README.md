@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Reserva de Salón - COHEP</title>
@@ -128,9 +124,9 @@
         
         <div class="navbar">            
             
-            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR_pZSv3gM3dYHr3o_8xzQVZUIx5qwAUdyJlELv3cIq8R5hs1Wtq6dE7ir_WThOleKlpgdxfcxdlWAZ/pubhtml">Registro de Eventos</a>
-            <a href="https://calendar.google.com/calendar/u/0/r/month/2025/3/1">Calendario</a>
-            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRi4jMF9Zp-5rsykWvezTehunmHh83Mr_1YKj8so587D8Z3atk6q-YyJp90FIEexuy2rOrUTHerwTLG/pubhtml?gid=0&single=true">Solicitudes</a>
+            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR_pZSv3gM3dYHr3o_8xzQVZUIx5qwAUdyJlELv3cIq8R5hs1Wtq6dE7ir_WThOleKlpgdxfcxdlWAZ/pubhtml"target="_blank">Registro de Eventos</a>
+            <a href="https://calendar.google.com/calendar/u/0/r/month/2025/3/1"target="_blank">Calendario</a>
+            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRi4jMF9Zp-5rsykWvezTehunmHh83Mr_1YKj8so587D8Z3atk6q-YyJp90FIEexuy2rOrUTHerwTLG/pubhtml?gid=0&single=true"target="_blank">Solicitudes</a>
             
         </div>
         
@@ -255,4 +251,4 @@
         </div>
        
     </body>
-</html>
+
