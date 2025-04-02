@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="es">
     <head>
 
@@ -124,7 +124,7 @@
 
     </head>
     <body>
-        <link rel="icon" href="COHEP.png" type="image/x-icon"> 
+        <link rel="icon" href="(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqfqHp71ODZcTxHm2FTtdXeu2Q3C6vgQ90Q&s)" type="image/x-icon"> 
         
         <div class="navbar">            
             
@@ -135,7 +135,7 @@
         
         <div class="container">
             <div style="text-align: center; margin-top: 20px;">
-                <img src="COHEP.png" alt="COHEP" width="300"
+                <img src="(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqfqHp71ODZcTxHm2FTtdXeu2Q3C6vgQ90Q&s)" alt="COHEP" width="300"
                 alt="Abrir documento" 
                 style="cursor: pointer; width: 250px;" 
                 onclick="pedirClave()">            
