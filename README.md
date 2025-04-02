@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
     <head>
 
@@ -20,13 +21,17 @@
                 overflow-x: hidden;
             }
 
-            .navbar { /* Franja*/
-                width: 100%;
+            .navbar {
+                width: 100%; /* Esto hace que ocupe todo el ancho de la pantalla */
                 background: #FFC107;
                 padding: 10px;
                 text-align: center;
-                box-shadow: 1px 4px 6px rgba(10, 10, 10, 100.1);
+                box-shadow: 1px 4px 6px rgba(10, 10, 10, 0.1); /* Corrige el valor de opacidad */
+                position: absolute; /* Para que se quede fija en la parte superior */
+                top: 0; /* Ajusta la barra a la parte superior */
+                left: 0; /* Asegura que ocupe todo el ancho */
             }
+
 
             .navbar a {/* Letras de la Franja*/
                 color: #000000;
@@ -40,17 +45,18 @@
                 text-decoration: underline;
             }
 
-            .container {/*Formulario*/
+            .container {
                 padding: 15px;
                 border-radius: 5px;
                 box-shadow: 0 4px 15px rgba(17, 255, 9, 0.3);
-                width: 95%;
-                max-width: 800px;            
+                width: 90%; /* Aumenta el ancho relativo */
+                max-width: 1000px; /* Aumenta el ancho máximo permitido */
                 margin-top: 70px;
                 color: rgb(0, 0, 0);
                 text-align: center;
-                background: #ffffff;             
+                background: #ffffff;
             }
+
 
             h2 {
                 text-align: center;
@@ -141,13 +147,13 @@
             <form id="reservaForm" method="post" action="https://script.google.com/macros/s/AKfycbzS7LaKY_rTdk-LYk5LKCQJwiUgQAg99IlIZ8mxDACtm50WcazWeNcQH-_nPp-Gs53_/exec">
                 
                 <label for="responsable">Persona Responsable:</label>
-                <input type="text" id="responsable" name="encargado">
+                <input type="text" id="responsable" name="encargado" required>
                              
                 <label for="evento">Nombre del Evento:</label>
-                <input type="text" id="evento" name="evento">
+                <input type="text" id="evento" name="evento" required>
 
                 <label for="salon">Salón Disponible:</label>
-                <select id="salon_disponible" name="salon" onchange="toggleSubSalon()">
+                <select id="salon_disponible" name="salon" onchange="toggleSubSalon()" required>
                     <option value="" disabled selected>Seleccione un salón</option>
                     <option value="Salón Albert Smith"> Salón Albert Smith</option>
                     <option value="Salón Juan Ferrera">Salón Juan Ferrera</option>
@@ -179,17 +185,17 @@
                 </div>
                                                                        
                 <label for="participantes">Cantidad de Participantes:</label>
-                <input type="number" id="participantes" name="participantes">
+                <input type="number" id="participantes" name="participantes" required>
 
                 <label for="tecnologia">ZOOM</label>
-                <select id="tecnologia" name="tecnologia">
+                <select id="tecnologia" name="tecnologia" required>
                     <option value="" disabled selected>Audio Visuales Requerido</option>
                     <option value="SI">Si</option>                    
                     <option value="NO">No</option>  
                 </select>             
                         
                 <label for="montaje">Montaje del Evento:</label>
-                <select id="montaje" name="montaje">
+                <select id="montaje" name="montaje" required>
                     <option value="" disabled selected>Seleccione un montaje</option>
                     <option value="Auditorio 1">Auditorio 1</option>
                     <option value="Auditorio 2">Auditorio 2</option>
@@ -201,7 +207,7 @@
                     <option value="Escuela">Escuela</option>                                   
                 </select>    
                                                        
-                <button type="button">Guardar Información</button>
+                <button type="submit">Guardar Información</button>
 
                                         
                 <script>               
