@@ -233,13 +233,23 @@
                     /*Imagen-Base de datos*/
                     function pedirClave() {
                         var clave = prompt("Ingresa la clave para acceder:");
+
                         if (clave === "1234") {
-                            // Abre la primera ventana
-                                 window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0",                                          "_blank");
-                                 window.open("https://docs.google.com/spreadsheets/d/1NCRdb6hLrHTW1G9-aTVeuWfQ4d42XnpHjAWRVqRUOwo/edit?gid=0#gid=0",                                             "_blank");
-                                        
+                            preguntarPagina(); // Si la clave es correcta, pregunta qué hoja abrir
                         } else {
                             alert("Clave incorrecta. Acceso denegado.");
+                        }
+                    }
+
+                    function preguntarPagina() {
+                        var opcion = prompt("¿Qué hoja quieres abrir? '1)Reservaciones' o '2)Solicitudes':");
+
+                        if (opcion === "1") {
+                            window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0", "_blank");
+                        } else if (opcion === "2") {
+                            window.open("https://docs.google.com/spreadsheets/d/1NCRdb6hLrHTW1G9-aTVeuWfQ4d42XnpHjAWRVqRUOwo/edit?gid=0#gid=0", "_blank");
+                        } else {
+                            alert("Opción no válida. Escribe '1' o '2'.");
                         }
                     }
 
