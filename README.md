@@ -48,7 +48,7 @@
                 padding: 15px;
                 border-radius: 5px;
                 box-shadow: 0 4px 15px rgba(17, 255, 9, 0.3);
-                width: 95%; /* Aumenta el ancho relativo */
+                width: 100%; /* Aumenta el ancho relativo */
                 max-width: 1000px; /* Aumenta el ancho máximo permitido */
                 margin-top: 70px;
                 color: rgb(0, 0, 0);
