@@ -1,19 +1,19 @@
 <html lang="es">
     <head>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Reserva de Salón - COHEP</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-        
-        <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Salón - COHEP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+      
+     <style>
 
             body { /*Fondo del Formulairo*/
                 font-family: 'Poppins', sans-serif;
                 background-color: #1e5fa0;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+               align-items: center;
                 height: 100vh;
                 margin: 5;               
                 text-align: center;
@@ -125,10 +125,10 @@
     <body>
         <link rel="icon" href="https://www.cohep.org/wp-content/uploads/2022/11/logo-cohep-300x214.png" type="image/x-icon"> 
         
-        <div class="navbar">            
-            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR_pZSv3gM3dYHr3o_8xzQVZUIx5qwAUdyJlELv3cIq8R5hs1Wtq6dE7ir_WThOleKlpgdxfcxdlWAZ/pubhtml" target="_blank">Registro de Eventos</a>
-            <a href="https://calendar.google.com/calendar/u/0/r/month/2025/3/1" target="_blank">Calendario</a>
-            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRi4jMF9Zp-5rsykWvezTehunmHh83Mr_1YKj8so587D8Z3atk6q-YyJp90FIEexuy2rOrUTHerwTLG/pubhtml?gid=0&single=true" target="_blank">Solicitudes</a>
+    <div class="navbar">            
+     <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR_pZSv3gM3dYHr3o_8xzQVZUIx5qwAUdyJlELv3cIq8R5hs1Wtq6dE7ir_WThOleKlpgdxfcxdlWAZ/pubhtml" target="_blank">Registro de Eventos</a>
+     <a href="https://calendar.google.com/calendar/u/0/r/month/2025/3/1" target="_blank">Calendario</a>
+     <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRi4jMF9Zp-5rsykWvezTehunmHh83Mr_1YKj8so587D8Z3atk6q-YyJp90FIEexuy2rOrUTHerwTLG/pubhtml?gid=0&single=true" target="_blank">Solicitudes</a>
             
         </div>
         
@@ -140,9 +140,9 @@
                 onclick="pedirClave()">            
             </div>
 
-            <h2>Reserva de Salón</h2>
+       <h2>Reserva de Salón</h2>
 
-            <form id="reservaForm" method="post" action="https://script.google.com/macros/s/AKfycbzS7LaKY_rTdk-LYk5LKCQJwiUgQAg99IlIZ8mxDACtm50WcazWeNcQH-_nPp-Gs53_/exec">
+       <form id="reservaForm" method="post" action="https://script.google.com/macros/s/AKfycbzS7LaKY_rTdk-LYk5LKCQJwiUgQAg99IlIZ8mxDACtm50WcazWeNcQH-_nPp-Gs53_/exec">
                 
                 <label for="responsable">Persona Responsable:</label>
                 <input type="text" id="responsable" name="encargado" required>
@@ -236,10 +236,11 @@
                         if (clave === "1234") {
                             // Abre la primera ventana
                             window.open("https://docs.google.com/spreadsheets/d/1NCRdb6hLrHTW1G9-aTVeuWfQ4d42XnpHjAWRVqRUOwo/edit?gid=0#gid=0", "_blank");
+                            window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0", "_blank");
                             
                            setTimeout(function() {
                             window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0", "_blank");
-                            }, 400); // 500 milisegundos de retraso
+                            }, 100); // 
                         } else {
                             alert("Clave incorrecta. Acceso denegado.");
                         }
