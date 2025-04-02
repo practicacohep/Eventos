@@ -1,4 +1,3 @@
-
 <html lang="es">
     <head>
 
@@ -11,15 +10,12 @@
 
             body { /*Fondo del Formulairo*/
                 font-family: 'Poppins', sans-serif;
-                background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqfqHp71ODZcTxHm2FTtdXeu2Q3C6vgQ90Q&s'); /* Reemplaza con la URL o ruta de tu imagen */
-                background-repeat: repeat; 
-                background-size: auto; 
+                background-color: #1e5fa0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 height: 100vh;
-                margin: 5;
-                color: rgb(253, 243, 43);
+                margin: 5;               
                 text-align: center;
                 overflow-x: hidden;
             }
@@ -45,17 +41,15 @@
             }
 
             .container {/*Formulario*/
-                background: rgb(255, 255, 255, 0.1);
                 padding: 15px;
                 border-radius: 5px;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 4px 15px rgba(17, 255, 9, 0.3);
                 width: 85%;
                 max-width: 800px;            
                 margin-top: 70px;
-                color: black;
+                color: rgb(0, 0, 0);
                 text-align: center;
-                backdrop-filter: blur(25px); /* Difumina el fondo */
-                font-weight: 800;
+                background: #ffffff;             
             }
 
             h2 {
@@ -67,7 +61,7 @@
                 width: 95%;
                 padding: 10px;
                 margin: 8px 0;
-                border: 2px solid  #000000;
+                border: 2px solid  #FFC107;
                 border-radius: 10px;
                 font-size: 15px;
             }
@@ -124,18 +118,19 @@
 
     </head>
     <body>
-        <link rel="icon" href="(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqfqHp71ODZcTxHm2FTtdXeu2Q3C6vgQ90Q&s)" type="image/x-icon"> 
+        <link rel="icon" href="https://www.cohep.org/wp-content/uploads/2022/11/logo-cohep-300x214.png" type="image/x-icon"> 
         
         <div class="navbar">            
             
             <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR_pZSv3gM3dYHr3o_8xzQVZUIx5qwAUdyJlELv3cIq8R5hs1Wtq6dE7ir_WThOleKlpgdxfcxdlWAZ/pubhtml">Registro de Eventos</a>
-            <a href="Solicitud de Salon.html">Solicitud de Salon</a>
+            <a href="https://calendar.google.com/calendar/u/0/r/month/2025/3/1">Calendario</a>
+            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRi4jMF9Zp-5rsykWvezTehunmHh83Mr_1YKj8so587D8Z3atk6q-YyJp90FIEexuy2rOrUTHerwTLG/pubhtml?gid=0&single=true">Solicitudes</a>
             
         </div>
         
         <div class="container">
             <div style="text-align: center; margin-top: 20px;">
-                <img src="(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqfqHp71ODZcTxHm2FTtdXeu2Q3C6vgQ90Q&s)" alt="COHEP" width="300"
+                <img src="https://www.cohep.org/wp-content/uploads/2022/11/logo-cohep-300x214.png" alt="COHEP" width="300"
                 alt="Abrir documento" 
                 style="cursor: pointer; width: 250px;" 
                 onclick="pedirClave()">            
@@ -206,7 +201,7 @@
                     <option value="Escuela">Escuela</option>                                   
                 </select>    
                                                        
-                <button type="button" onclick="clave()">Guardar Información</button>
+                <button type="button">Guardar Información</button>
 
                                         
                 <script>               
@@ -234,25 +229,19 @@
                     /*Imagen-Base de datos*/
                     function pedirClave() {
                         var clave = prompt("Ingresa la clave para acceder:");
-                        if (clave === "1234") { 
-                            window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0", "_blank");
+                        if (clave === "1234") {
+                            // Abre la primera ventana
+                            window.open("https://docs.google.com/spreadsheets/d/1NCRdb6hLrHTW1G9-aTVeuWfQ4d42XnpHjAWRVqRUOwo/edit?gid=0#gid=0", "_blank");
+                            
+                            // Usa setTimeout para abrir la segunda ventana después de un pequeño retraso
+                            setTimeout(function() {
+                                window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0", "_blank");
+                            }, 500); // 500 milisegundos de retraso
                         } else {
                             alert("Clave incorrecta. Acceso denegado.");
                         }
                     }
-                                        
-                    /*Boton-Enviar formulario*/                   
-                    function clave() {
-                        var clave = prompt("Ingresa la clave para acceder:");
-
-                        if (clave === "1234") { 
-                            alert("✅ Clave correcta. Guardando información...");
-                            document.getElementById("reservaForm").submit(); 
-                        } else {
-                            alert("❌ Clave incorrecta. Acceso denegado.");
-                        }
-                    }
-
+                    
                 </script>
                                           
             </form>           
