@@ -128,7 +128,7 @@
 
     </head>
     <body>
-        <link rel="icon" href="COHEP.png" type="image/x-icon"> 
+        <link rel="icon" href="[COHEP.png](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6C_N_iWyV6yEfCeQzoxkBTiOMa2dOvBtMQ&s)" type="image/x-icon"> 
         
         <div class="navbar">            
             <a href="https://calendar.google.com/calendar/u/0/r?pli=1">Calendario</a>
