@@ -239,7 +239,7 @@
                                                      
                            setTimeout(function() {
                             window.open(https://docs.google.com/spreadsheets/d/1NCRdb6hLrHTW1G9-aTVeuWfQ4d42XnpHjAWRVqRUOwo/edit?gid=0#gid=0", "_blank");
-                            },5100); // 
+                            },500); // 
                         } else {
                             alert("Clave incorrecta. Acceso denegado.");
                         }
