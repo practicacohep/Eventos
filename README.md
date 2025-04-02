@@ -236,14 +236,15 @@
                         if (clave === "1234") {
                             // Abre la primera ventana
                             window.open("https://docs.google.com/spreadsheets/d/1vzbXKjf_YLEb7VSf2r0AODOjRLlvkQpHPlpB1d1z7KQ/edit?gid=0#gid=0", "_blank");
-                                                     
-                           setTimeout(function() {
-                            window.open(https://docs.google.com/spreadsheets/d/1NCRdb6hLrHTW1G9-aTVeuWfQ4d42XnpHjAWRVqRUOwo/edit?gid=0#gid=0", "_blank");
-                            },500); // 
+                    
+                    setTimeout(function() {
+                    window.open("https://docs.google.com/spreadsheets/d/1NCRdb6hLrHTW1G9-aTVeuWfQ4d42XnpHjAWRVqRUOwo/edit?gid=0#gid=0",         "_blank");
+                    }, 500); 
                         } else {
                             alert("Clave incorrecta. Acceso denegado.");
                         }
                     }
+
                     
                 </script>
                                           
