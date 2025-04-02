@@ -138,7 +138,7 @@
         
         <div class="container">
             <div style="text-align: center; margin-top: 20px;">
-                <img src="COHEP.png" alt="COHEP" width="300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6C_N_iWyV6yEfCeQzoxkBTiOMa2dOvBtMQ&s" alt="COHEP" width="300">
 
             </div>
 
